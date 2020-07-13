@@ -1,0 +1,28 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package entelect;
+
+/**
+ * @author Mothusi Molorane
+ */
+public abstract class CardStore {
+    
+    public Card getCard(String name, CardType cardType){
+        return createCard(name, cardType);
+    }
+    
+    protected boolean isValidCardName(String name) {
+        // Declare valid card names as per standard deck of playing cards
+        String validCards = "A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K";
+        return validCards.contains(name);
+    }
+    
+    public Card getCard(String name, CardType cardType, CardColor cardColor){
+        return createCard(name, cardType);
+    }
+    
+    protected abstract Card createCard(String name, CardType cardType);
+}
