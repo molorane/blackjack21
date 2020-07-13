@@ -38,8 +38,9 @@ public class BlackJack21 implements IPlay {
 			System.out.println("------"+player.getName()+" Results------");
 			displayPlayer(player);
 			System.out.print(player.getName()+" : "+player.getTotal());
-			
-			if(player.getTotal() >= dealer.getTotal() && player.getTotal() <=21) {
+			if(player.getCards().size() == 5 && player.getTotal() <= 21) {
+				System.out.println(" **beats dealer**");
+			}else if(player.getTotal() >= dealer.getTotal() && player.getTotal() <=21) {
 				System.out.println(" **beats dealer**");
 			}else {
 				System.out.println(" **loses**");
