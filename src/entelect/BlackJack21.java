@@ -24,6 +24,7 @@ public class BlackJack21 implements IPlay {
 	public void start() {
 		
 		// calculate dealer total score
+		// to compare with players
 		play(dealer);
 		
 		System.out.println("====DEALER====");
