@@ -30,7 +30,6 @@ public class BlackJack21 implements IPlay {
 		System.out.println("====DEALER====");
 		displayPlayer(dealer);
 		System.out.println(dealer.getName()+" : "+dealer.getTotal());
-		System.out.println("====DEALER====");
 		System.out.println();
 		
 		for (Player player : players) {
