@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package entelect;
 
 /**
@@ -55,10 +50,10 @@ public class Card {
 		fullName.append(" of ");
 
 		switch (cardType) {
-			case DIAMONDS:fullName.append("Diamonds");break;
-			case HEARTS:fullName.append("Hearts");break;
-			case CLUBS:fullName.append("Clubs");break;
-			case SPADES:fullName.append("Spades");break;
+			case DIAMONDS:	fullName.append("Diamonds");break;
+			case HEARTS:	fullName.append("Hearts");break;
+			case CLUBS:	fullName.append("Clubs");break;
+			case SPADES:	fullName.append("Spades");break;
 		}
 		this.fullName = fullName.toString();
 	}

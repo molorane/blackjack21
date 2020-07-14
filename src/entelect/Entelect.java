@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package entelect;
 
 import java.util.List;
@@ -11,16 +6,22 @@ import java.util.Set;
 /**
  * @author Mothusi Molorane
  */
-public class Entelect {
-	
+public class Entelect {	
 
 	private static CardStore store = CardFactory.getInstance();
+	private static Playable blackJack;
 
 	/**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    	ExampleTestCase();
+    	TestCase();
+    	System.out.println("==========================================================");
+    	System.out.println("                  ***STATISTICS***");
+        System.out.println(blackJack.winnersCount()+" winners.");
+        System.out.println(store.getUsedCards()+" cards used.");
+        System.out.println(blackJack.playersCount()+" players (excluding a dealer).");
+    	System.out.println("==========================================================");
     }
     
 
@@ -56,8 +57,8 @@ public class Entelect {
         Card nineOfDiamonds = store.createCard("9", CardType.DIAMONDS);
         Player carla = new Player("Carla", Set.of(queenOfClubs, sixOfSpades, nineOfDiamonds));
         
-        Playable blackJack21 = new BlackJack21(dealer, List.of(lemmy, andrew, billy, carla));
-        blackJack21.start();
+        blackJack = new BlackJack21(dealer, List.of(lemmy, andrew, billy, carla));
+        blackJack.start();
     }
     
     
@@ -84,8 +85,8 @@ public class Entelect {
         Card kingOfSpades = store.createCard("K", CardType.SPADES);
         Player billy = new Player("Carla", Set.of(twoOfClubs,nineOfDiamonds,kingOfSpades));
         
-        Playable blackJack21 = new BlackJack21(dealer, List.of(lemmy,andrew,billy));
-        blackJack21.start();
+        blackJack = new BlackJack21(dealer, List.of(lemmy,andrew,billy));
+        blackJack.start();
     }
     
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package entelect;
 
 import java.util.List;
@@ -12,8 +7,9 @@ import java.util.List;
  */
 public class BlackJack21 implements Playable {
 
-	private Player dealer;
-	private List<Player> players;
+	private final Player dealer;
+	private final List<Player> players;
+	private int winners;
 
 	public BlackJack21(Player dealer, List<Player> players) {
 		this.dealer = dealer;
@@ -38,8 +34,10 @@ public class BlackJack21 implements Playable {
 			displayPlayer(player);
 			System.out.print(player.getName()+" : "+player.getTotal());
 			if(player.getCards().size() == 5 && player.getTotal() <= 21) {
+				winners++;
 				System.out.println(" *beats dealer*");
 			}else if(player.getTotal() >= dealer.getTotal() && player.getTotal() <=21) {
+				winners++;
 				System.out.println(" *beats dealer*");
 			}else {
 				System.out.println(" *loses*");
@@ -61,6 +59,16 @@ public class BlackJack21 implements Playable {
 		
 		player.setTotal(total);
 		
+	}
+
+	@Override
+	public int winnersCount() {
+		return winners;
+	}
+
+	@Override
+	public int playersCount() {
+		return players.size();
 	}
 
 }

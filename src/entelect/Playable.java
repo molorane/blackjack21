@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package entelect;
 
 /**
@@ -10,10 +5,10 @@ package entelect;
  */
 public interface Playable {
 
-	
 	void start();
-	
 	void play(Player player);
+	int winnersCount();
+	int playersCount();
 	
 	default void displayPlayer(Player player) {
 		for(Card card: player.getCards()) {
