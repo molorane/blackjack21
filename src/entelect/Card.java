@@ -20,11 +20,11 @@ public class Card {
 		this.name = name;
 		this.setValue(name);
 		this.cardType = cardType;
-		this.setCardColor(cardType);
-		this.setFullName();
+		this.initCardColor(cardType);
+		this.initFullName();
 	}
 
-	public final void setCardColor(CardType cardType) {
+	private void initCardColor(CardType cardType) {
 		switch (cardType) {
 			case SPADES:
 			case CLUBS:
@@ -34,7 +34,7 @@ public class Card {
 		}
 	}
 
-	public final void setFullName() {
+	private void initFullName() {
 		StringBuilder fullName = new StringBuilder();
 		switch (name) {
 			case "A":	fullName.append("Ace");break;

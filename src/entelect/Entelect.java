@@ -28,7 +28,7 @@ public class Entelect {
     	 // Dealer
         Card jackOfSpades = store.createCard("J", CardType.SPADES);
         Card nineOfHearts = store.createCard("9", CardType.HEARTS);
-        Player dealer = new Dealer("Dealer", Set.of(jackOfSpades, nineOfHearts));
+        Player dealer = new Player("Dealer", Set.of(jackOfSpades, nineOfHearts));
         
         // Player Lemmy
         Card aceOfSpades = store.createCard("A", CardType.SPADES);
@@ -65,7 +65,7 @@ public class Entelect {
     	 // Dealer
         Card sixOfClubs = store.createCard("6", CardType.CLUBS);
         Card nineOfClubs = store.createCard("9", CardType.CLUBS);
-        Player dealer = new Dealer("Dealer", Set.of(sixOfClubs, nineOfClubs));
+        Player dealer = new Player("Dealer", Set.of(sixOfClubs, nineOfClubs));
         
         // Player Andrew
         Card nineOfHearts = store.createCard("9", CardType.HEARTS);
