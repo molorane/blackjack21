@@ -20,7 +20,7 @@ public class Entelect {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    	TestCase();
+    	ExampleTestCase();
     }
     
 
@@ -61,7 +61,7 @@ public class Entelect {
     }
     
     
-    public static void examples(){
+    public static void ExampleTestCase(){
     	 // Dealer
         Card sixOfClubs = store.createCard("6", CardType.CLUBS);
         Card nineOfClubs = store.createCard("9", CardType.CLUBS);

@@ -54,17 +54,11 @@ public class BlackJack21 implements Playable {
 		int countAceCards = countPlayerAceCards(player);
 		int total = sumOfAllNoneAceCards(player);
 
-		if (total <= 7) {
-			total += 11 + (countAceCards - 1);
-		}else if(total <= 8) {
-			total += (countAceCards <= 3)? Ace.alterValue + (countAceCards - 1): countAceCards;
-		}else if(total <= 9) {
-			total += (countAceCards <= 2)? Ace.alterValue + (countAceCards - 1): countAceCards;
-		}else if(total <= 10) {
-			total += (countAceCards == 1)? Ace.alterValue : countAceCards;
-		}else {
-			total += countAceCards;
-		}
+		total  += (total <= 7)?  Ace.alterValue + (countAceCards - 1) :
+				  (total <= 8)? (countAceCards <= 3)? Ace.alterValue + (countAceCards - 1): countAceCards :
+				  (total <= 9)? (countAceCards <= 2)? Ace.alterValue + (countAceCards - 1): countAceCards :
+				  (total <= 10)? (countAceCards == 1)? Ace.alterValue : countAceCards: countAceCards;
+		
 		player.setTotal(total);
 		
 	}
