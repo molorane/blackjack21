@@ -10,11 +10,11 @@ package entelect;
  */
 public class Card {
 
-	private String name;
-	private Byte value;
-	private CardType cardType;
+	private final String name;
+	private final CardType cardType;
 	private CardColor cardColor;
 	private String fullName;
+	private Byte value;
 
 	public Card(String name, CardType cardType) {
 		this.name = name;
@@ -26,46 +26,41 @@ public class Card {
 
 	public final void setCardColor(CardType cardType) {
 		switch (cardType) {
-		case SPADES:
-		case CLUBS:
-			this.cardColor = CardColor.BLACK;
-			break;
-		default:
-			this.cardColor = CardColor.RED;
+			case SPADES:
+			case CLUBS:
+				this.cardColor = CardColor.BLACK; break;
+			default:
+				this.cardColor = CardColor.RED;
 		}
 	}
 
 	public final void setFullName() {
-		String fullName = "";
+		StringBuilder fullName = new StringBuilder();
 		switch (name) {
-			case "A":fullName += "Ace";break;
-			case "2":fullName += "Two";break;
-			case "3":fullName += "Three";break;
-			case "4":fullName += "Four";break;
-			case "5":fullName += "Five";break;
-			case "6":fullName += "Six";break;
-			case "7":fullName += "Seven";break;
-			case "8":fullName += "Eight";break;
-			case "9":fullName += "Nine";break;
-			case "10":fullName += "Ten";break;
-			case "K":fullName += "King";break;
-			case "Q":fullName += "Queen";break;
-			case "J":fullName += "Jack";break;
+			case "A":	fullName.append("Ace");break;
+			case "2":	fullName.append("Two");break;
+			case "3":	fullName.append("Three");break;
+			case "4":	fullName.append("Four");break;
+			case "5":	fullName.append("Five");break;
+			case "6":	fullName.append("Six");break;
+			case "7":	fullName.append("Seven");break;
+			case "8":	fullName.append("Eight");break;
+			case "9":	fullName.append("Nine");break;
+			case "10":	fullName.append("Ten");break;
+			case "K":	fullName.append("King");break;
+			case "Q":	fullName.append("Queen");break;
+			case "J":	fullName.append("Jack");break;
 		}
 		
-		fullName += " of ";
+		fullName.append(" of ");
 
 		switch (cardType) {
-			case DIAMONDS:fullName += "Diamonds";break;
-			case HEARTS:fullName += "Hearts";break;
-			case CLUBS:fullName += "Clubs";break;
-			case SPADES:fullName += "Spades";break;
+			case DIAMONDS:fullName.append("Diamonds");break;
+			case HEARTS:fullName.append("Hearts");break;
+			case CLUBS:fullName.append("Clubs");break;
+			case SPADES:fullName.append("Spades");break;
 		}
-		this.fullName = fullName;
-	}
-	
-	public String getFullName() {
-		return this.fullName;
+		this.fullName = fullName.toString();
 	}
 
 	public final void setValue(String name) {
@@ -95,59 +90,30 @@ public class Card {
 		return hash;
 	}
 
-	/**
-	 * @return the name
-	 */
 	public String getName() {
 		return name;
 	}
-
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
+	
+	public String getFullName() {
+		return this.fullName;
 	}
 
-	/**
-	 * @return the value
-	 */
+
 	public Byte getValue() {
 		return value;
 	}
-
-	/**
-	 * @param value the value to set
-	 */
+	
 	public void setValue(Byte value) {
 		this.value = value;
 	}
 
-	/**
-	 * @return the cardColor
-	 */
+
 	public CardColor getCardColor() {
 		return cardColor;
 	}
 
-	/**
-	 * @param cardColor the cardColor to set
-	 */
-	public void setCardColor(CardColor cardColor) {
-		this.cardColor = cardColor;
-	}
-
-	/**
-	 * @return the cardType
-	 */
+	
 	public CardType getCardType() {
 		return cardType;
-	}
-
-	/**
-	 * @param cardType the cardType to set
-	 */
-	public void setCardType(CardType cardType) {
-		this.cardType = cardType;
 	}
 }

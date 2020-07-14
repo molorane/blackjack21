@@ -8,11 +8,12 @@ package entelect;
 /**
  * @author Mothusi MOlorane
  */
-public interface IPlay {
+public interface Playable {
 
-	void play(Player player);
 	
 	void start();
+	
+	void play(Player player);
 	
 	default void displayPlayer(Player player) {
 		for(Card card: player.getCards()) {

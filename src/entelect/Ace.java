@@ -10,25 +10,9 @@ package entelect;
  */
 public class Ace extends Card {
 
-    private Byte alterValue;
+    public static final Byte alterValue = 11;
 
     public Ace(String name, CardType cardType) {
         super(name, cardType);
-        this.alterValue = 11; // set alternative value of an ace card to 11
     }
-
-    /**
-     * @return the alterValue
-     */
-    public Byte getAlterValue() {
-        return alterValue;
-    }
-
-    /**
-     * @param alterValue the alterValue to set
-     */
-    public void setAlterValue(Byte alterValue) {
-        this.alterValue = alterValue;
-    }
-
 }

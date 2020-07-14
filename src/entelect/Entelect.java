@@ -5,6 +5,7 @@
  */
 package entelect;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -55,7 +56,7 @@ public class Entelect {
         Card nineOfDiamonds = store.createCard("9", CardType.DIAMONDS);
         Player carla = new Player("Carla", Set.of(queenOfClubs, sixOfSpades, nineOfDiamonds));
         
-        IPlay blackJack21 = new BlackJack21(dealer, Set.of(lemmy, andrew, billy, carla));
+        Playable blackJack21 = new BlackJack21(dealer, List.of(lemmy, andrew, billy, carla));
         blackJack21.start();
     }
     
@@ -83,7 +84,7 @@ public class Entelect {
         Card kingOfSpades = store.createCard("K", CardType.SPADES);
         Player billy = new Player("Carla", Set.of(twoOfClubs,nineOfDiamonds,kingOfSpades));
         
-        IPlay blackJack21 = new BlackJack21(dealer, Set.of(lemmy,andrew,billy));
+        Playable blackJack21 = new BlackJack21(dealer, List.of(lemmy,andrew,billy));
         blackJack21.start();
     }
     
