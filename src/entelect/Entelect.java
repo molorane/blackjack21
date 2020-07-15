@@ -6,7 +6,7 @@ import java.util.Set;
 /**
  * @author Mothusi Molorane
  */
-public class Entelect {	
+public class Entelect {
 
 	private static CardStore store = CardFactory.getInstance();
 	private static Playable blackJack;
@@ -15,7 +15,7 @@ public class Entelect {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    	ExampleTestCase();
+    	TestCase();
     	System.out.println("==========================================================");
     	System.out.println("                  ***STATISTICS***");
         System.out.println(blackJack.winnersCount()+" winners.");
@@ -62,7 +62,7 @@ public class Entelect {
     }
     
     
-    public static void ExampleTestCase(){
+    public static void ExampleHands(){
     	 // Dealer
         Card sixOfClubs = store.createCard("6", CardType.CLUBS);
         Card nineOfClubs = store.createCard("9", CardType.CLUBS);

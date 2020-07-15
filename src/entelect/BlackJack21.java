@@ -58,7 +58,6 @@ public class BlackJack21 implements Playable {
 				  (total <= 10)? (countAceCards == 1)? Ace.alterValue : countAceCards: countAceCards;
 		
 		player.setTotal(total);
-		
 	}
 
 	@Override
