@@ -15,10 +15,6 @@ public abstract class CardStore {
         return validCards.contains(name);
     }
     
-    public Card getCard(String name, CardType cardType, CardColor cardColor){
-        return createCard(name, cardType);
-    }
-    
     protected abstract Card createCard(String name, CardType cardType);
     protected abstract int getUsedCards();
 }
