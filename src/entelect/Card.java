@@ -7,29 +7,29 @@ public class Card {
 
 	private final String name;
 	private final CardType cardType;
-	private CardColor cardColor;
-	private String fullName;
-	private Byte value;
+	private final CardColor cardColor;
+	private final String fullName;
+	private final Byte value;
 
 	public Card(String name, CardType cardType) {
 		this.name = name;
-		this.setValue(name);
+		this.value = setValue(name);
 		this.cardType = cardType;
-		this.initCardColor(cardType);
-		this.initFullName();
+		this.cardColor = initCardColor(cardType);
+		this.fullName = initFullName();
 	}
 
-	private void initCardColor(CardType cardType) {
+	private CardColor initCardColor(CardType cardType) {
 		switch (cardType) {
 			case SPADES:
 			case CLUBS:
-				this.cardColor = CardColor.BLACK; break;
+				return CardColor.BLACK;
 			default:
-				this.cardColor = CardColor.RED;
+				return CardColor.RED;
 		}
 	}
 
-	private void initFullName() {
+	private String initFullName() {
 		StringBuilder fullName = new StringBuilder();
 		switch (name) {
 			case "A":	fullName.append("Ace");break;
@@ -55,17 +55,17 @@ public class Card {
 			case CLUBS:	fullName.append("Clubs");break;
 			case SPADES:	fullName.append("Spades");break;
 		}
-		this.fullName = fullName.toString();
+		return fullName.toString();
 	}
 
-	public final void setValue(String name) {
+	public final Byte setValue(String name) {
 		String jqk = "JQK";
 		if (name.equalsIgnoreCase("A")) {
-			this.setValue((byte) 1);
+			return(byte) 1;
 		} else if (jqk.contains(name)) {
-			this.setValue((byte) 10);
+			return (byte) 10;
 		} else {
-			this.setValue(Byte.parseByte(name));
+			return Byte.parseByte(name);
 		}
 	}
 
@@ -97,11 +97,6 @@ public class Card {
 	public Byte getValue() {
 		return value;
 	}
-	
-	public void setValue(Byte value) {
-		this.value = value;
-	}
-
 
 	public CardColor getCardColor() {
 		return cardColor;

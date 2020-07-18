@@ -15,7 +15,7 @@ public class Entelect {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    	TestCase();
+    	ExampleHands();
     	System.out.println("==========================================================");
     	System.out.println("                  ***STATISTICS***");
         System.out.println(blackJack.winnersCount()+" winners.");
