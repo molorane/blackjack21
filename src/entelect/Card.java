@@ -54,6 +54,7 @@ public class Card {
 			case HEARTS:	fullName.append("Hearts");break;
 			case CLUBS:	fullName.append("Clubs");break;
 			case SPADES:	fullName.append("Spades");break;
+			default: throw new RuntimeException();
 		}
 		return fullName.toString();
 	}
