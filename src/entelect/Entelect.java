@@ -20,7 +20,7 @@ public class Entelect {
     	System.out.println("                  ***STATISTICS***");
         System.out.println(blackJack.winnersCount()+" winners.");
         System.out.println(store.getUsedCards()+" cards used.");
-        System.out.println(blackJack.playersCount()+" players (excluding a dealer).");
+        System.out.println(blackJack.playersCount()+" total number of players (excluding a dealer).");
     	System.out.println("==========================================================");
     }
     
