@@ -13,8 +13,8 @@ public class Card {
 
 	public Card(String name, CardType cardType) {
 		this.name = name;
-		this.value = setValue(name);
 		this.cardType = cardType;
+		this.value = initValue(name);
 		this.cardColor = initCardColor(cardType);
 		this.fullName = initFullName();
 	}
@@ -54,12 +54,12 @@ public class Card {
 			case HEARTS:	fullName.append("Hearts");break;
 			case CLUBS:	fullName.append("Clubs");break;
 			case SPADES:	fullName.append("Spades");break;
-			default: throw new RuntimeException();
+			default: throw new RuntimeException("Card type invalid");
 		}
 		return fullName.toString();
 	}
 
-	public final Byte setValue(String name) {
+	public final Byte initValue(String name) {
 		String jqk = "JQK";
 		if (name.equalsIgnoreCase("A")) {
 			return(byte) 1;
