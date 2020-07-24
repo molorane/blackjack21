@@ -10,7 +10,7 @@ public interface Playable {
 	int winnersCount();
 	int playersCount();
 	
-	default void displayPlayer(Player player) {
+	default void displayPlayerCards(Player player) {
 		for(Card card: player.getCards()) {
 			System.out.println(card.getFullName());
 		}

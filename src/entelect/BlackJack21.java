@@ -24,14 +24,14 @@ public class BlackJack21 implements Playable {
 		play(dealer);
 		
 		System.out.println("-----DEALER------");
-		displayPlayer(dealer);
+		displayPlayerCards(dealer);
 		System.out.println(dealer.getName()+" : "+dealer.getTotal());
 		System.out.println();
 		
 		for (Player player : players) {
 			play(player);
 			System.out.println("------"+player.getName()+" Results------");
-			displayPlayer(player);
+			displayPlayerCards(player);
 			System.out.print(player.getName()+" : "+player.getTotal());
 			if(player.getCards().size() == 5 && player.getTotal() <= 21) {
 				winners++;
